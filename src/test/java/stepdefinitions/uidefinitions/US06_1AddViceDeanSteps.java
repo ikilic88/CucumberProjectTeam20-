@@ -4,9 +4,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.ViceDeanManagement;
-import utilities.Driver;
+import utilities.ReusableMethods;
 
-public class US06_AddViceDeanSteps {
+public class US06_1AddViceDeanSteps {
     ViceDeanManagement viceDeanManagement;
     @Given("Kullanici name {string} kismina valid  girer")
     public void kullanici_name_kismina_valid_girer(String string) {
@@ -66,14 +66,11 @@ public class US06_AddViceDeanSteps {
     @Then("Kullanici basariyla Vice Dean ekleyebildigini dogrular.")
     public void kullanici_basariyla_vice_dean_ekleyebildigini_dogrular() {
         viceDeanManagement=new ViceDeanManagement();
-        assert viceDeanManagement.saveSuccesfullyMessage.isDisplayed();
+        ReusableMethods.verifyElementNotDisplayed(viceDeanManagement.saveSuccesfullyMessage);
 
     }
 
-    @Then("close driver")
-    public void close_driver() {
-        Driver.closeDriver();
-    }
+
 
 
 

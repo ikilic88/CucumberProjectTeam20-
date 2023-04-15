@@ -1,4 +1,4 @@
-package stepdefinitions.uidefinitions.US08;
+package stepdefinitions.uidefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -23,12 +23,16 @@ public class US8NegativeTestStepdefinition {
         Assert.assertTrue(lessonsManagementPage.lessonhataMesaji.isDisplayed());
     }
 
-    @And("Credit Score {string}  gırer")
+<<<<<<< HEAD
+    @And("Credit  Score {string}  gırer")
+=======
+/*    @And("Credit Score {string}  gırer")
+>>>>>>> master
     public void creditScoreGırer(String string) {
 
         lessonsManagementPage.creditScore.sendKeys("?:",Keys.TAB,Keys.ENTER);
 
-    }
+    }*/
     @And("Submit  e tiklarr")
     public void submitETiklar() {
         ReusableMethods.waitFor(5);
