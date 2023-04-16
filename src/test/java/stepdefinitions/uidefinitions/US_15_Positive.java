@@ -4,18 +4,15 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.ViceDeanManagement;
 import utilities.Driver;
-import utilities.ReusableMethods;
 
 import static utilities.ReusableMethods.waitFor;
 
-public class US_15 {
+public class US_15_Positive {
     ViceDeanManagement viceDeamanagemet = new ViceDeanManagement();
     Actions actions = new Actions(Driver.getDriver());
     Faker faker = new Faker();
@@ -31,7 +28,7 @@ public class US_15 {
     public void viceDeanChooseAdvisor_TeacherAlaniSecilir(String string) {
         Select select = new Select(viceDeamanagemet.ChooseadvisorTeacher);
         select.selectByVisibleText(string);
-    // Driver.clickWithJS(viceDeamanagemet.ChooseadvisorTeacher);
+        // Driver.clickWithJS(viceDeamanagemet.ChooseadvisorTeacher);
         //waitFor(2);
         //viceDeamanagemet.ChooseadvisorTeacher.sendKeys(string);
     }//*[@value='107']
@@ -104,18 +101,60 @@ public class US_15 {
 
     @Then("Vice {string} Password alanina valid bir deger girer")
     public void vicePasswordAlaninaValidBirDegerGirer(String string) {
+
         viceDeamanagemet.password.sendKeys(string);
     }
 
     @Then("Vice Dean Submit Butonuna tiklar")
-    public void viceDeanSubmitButonunaTiklar(){
-    viceDeamanagemet.submit.click();
+    public void viceDeanSubmitButonunaTiklar() {
+        viceDeamanagemet.submit.click();
     }
 
     @And("Vice  Dean succesfully  ibaresini gorur dogrulamasini yapar")
     public void viceDeanSuccesfullyIbaresiniGorurDogrulamasiniYapar() {
-        viceDeamanagemet.succesfully.isDisplayed();
+        waitFor(2);
+        Assert.assertTrue(viceDeamanagemet.succesfully.isDisplayed());
     }
 
 
+//////////tc02
+
+   /* @And("Vice  Required  ibaresini gorur dogrulamasini yapar")
+    public void viceRequiredIbaresiniGorurDogrulamasiniYapar() {
+        Assert.assertTrue(viceDeamanagemet.nameRequired.isDisplayed());
+       }
+    */
+
+
+    @Then("Vice Dean Choose {string} Advisor_Teacher alani bos birakilir")
+    public void viceDeanChooseAdvisor_TeacherAlaniBosBirakilir(String string) {
+
+        viceDeamanagemet.ChooseadvisorTeacher.sendKeys("");
+    }
+
+    @And("Vice Dean kayit yapilamadigini dogrular")
+    public void viceDeanKayitYapilamadiginiDogrular() {
+        waitFor(1);
+        Assert.assertTrue(viceDeamanagemet.teacherPopup.getText().contains("Please select advisor teacher"));
+    }
+
+
+    ////////////////////tc3
+    @Then("Vice Dean {string}Name alanini bos birakilir")
+    public void viceDeanNameAlaniniBosBirakilir(String string) {
+        viceDeamanagemet.name.sendKeys("");
+
+    }
+
+
+    @And("Vice  Required  ibaresini gorur dogrulamasini yapar")
+    public void viceRequiredIbaresiniGorurDogrulamasiniYapar() {
+        Assert.assertTrue(viceDeamanagemet.nameRequired.isDisplayed());
+    }
+
+    ////////////////////tc4
+
+
+
 }
+
