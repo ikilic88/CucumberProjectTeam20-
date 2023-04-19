@@ -10,22 +10,23 @@ Feature: Admin ogrenci  olusturabilmelidir
 
   @US25_TC01
   Scenario Outline: TC_01 Ogrecinin danisman ogretmeni secilmelidir.
-    Then Vice Dean Choose "<Advisor Teacher>" Advisor Teacher alani secilir
-    Then Vice Dean "<Name>"Name alanina vaild bir deger girer
-    Then Vice Dean "<surname>" surname alanina valid bir deger girer
-    Then Vice Dean "<Birth Place>" Birth Place alanina valid bir deger girer
-    Then Vice Dean "<Email>" Email alanina valid bir deger girer
-    Then Vice Dean "<Phone>" Phone alanina valid bir deger girer
-    Then Vice Dean Gender secer
-    Then Vice Dean "<Date Of Birth>" Date Of Birth alanina valid bir deger girer
-    Then Vice Dean "<Ssn>" Ssn alanina valid bir deger girer
-    Then Vice Dean "<User Name>" User Name alanina valid bir deger girer
-    Then Vice "<Father>" Father alanina valid bir deger girer
-    Then Vice "<Mother>" Mother alanina valid bir deger girer
-    Then Vice "<Password>" Password alanina valid bir deger girer
-    Then Vice Dean Submit Butonuna tiklar
-    And Vice  Dean succesfully  ibaresini gorur dogrulamasini yapar
+    Then Admin Choose "<Advisor Teacher>" Advisor_Teacher alani secilir
+    Then Admin "<Name>"Name alanina vaild bir deger girer
+    Then Admin "<surname>" surname alanina valid bir deger girer
+    Then Admin "<Birth Place>" Birth Place alanina valid bir deger girer
+    Then Admin "<Email>" Email alanina valid bir deger girer
+    Then Admin "<Phone>" Phone alanina valid bir deger girer
+    Then Admin Gender secer
+    Then Admin "<Date Of Birth>" Date Of Birth alanina valid bir deger girer
+    Then Admin "<Ssn>" Ssn alanina valid bir deger girer
+    Then Admin "<User Name>" User Name alanina valid bir deger girer
+    Then Admin"<Father>" Father alanina valid bir deger girer
+    Then Admin"<Mother>" Mother alanina valid bir deger girer
+    Then Admin"<Password>" Password alanina valid bir deger girer
+    Then Admin Submit Butonuna tiklar
+    And Admin succesfully ibaresini gorur dogrulamasini yapar
     Then close driver
+
 
     Examples:Choose Advisor Teacher
 

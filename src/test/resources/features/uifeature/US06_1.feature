@@ -1,4 +1,4 @@
-@US06.1, @smoke
+@smoke
 Feature: Dean Vice Dean ekleyebilmeli
 
   Background:
@@ -16,4 +16,5 @@ Scenario: TC01 Dean basariyla viceDean eklemeli
     And   Kullanici submit tusuna tiklar.
     Then Kullanici basariyla Vice Dean ekleyebildigini dogrular.
     Then close driver
+
 

@@ -1,4 +1,4 @@
-@US23.1, @smoke
+@smoke
 Feature: Admin Dean ekyebilmelidir.
 
   Background: Admin olarak giris yapip vice dean managementa gelme
@@ -20,4 +20,5 @@ Feature: Admin Dean ekyebilmelidir.
     And   Kullanici submit tusuna tiklar.
     Then Kullanici basariyla Vice Dean ekleyebildigini dogrular.
     Then close driver
+
 

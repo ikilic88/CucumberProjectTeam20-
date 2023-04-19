@@ -8,9 +8,6 @@ import utilities.Driver;
 import java.util.List;
 
 public class DeanManagementPage {
-
-
-
     //nuran hanim,hayriye hanim
     public DeanManagementPage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -57,9 +54,8 @@ public class DeanManagementPage {
     public WebElement passwordBoxUyariYazisi;
 
     //Edit
-    @FindBy(xpath = "(//table[@class='table table-striped table-bordered table-hover']//tbody//td[6])[3]//button")
-    //"(//*[@class='text-dark btn btn-outline-info'])[20]"
-    public WebElement deanListEditButonu;
+    @FindBy(xpath = "(//table[@class='table table-striped table-bordered table-hover'])//tbody//tr//td[6]")
+    public List<WebElement> deanListEditButonu;
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement deanListeditpopupmesaji;
     @FindBy(xpath = "(//*[@role='button'])[21]")
@@ -83,6 +79,16 @@ public class DeanManagementPage {
     public WebElement viceDeanList;
     @FindBy(xpath = "//table[@class='table table-striped table-bordered table-hover']//tbody//tr//td[1]")
     public List<WebElement> isimlertext;
+    @FindBy(xpath = "(//button[@class='fw-semibold btn btn-primary btn-lg'])[2]")
+    public WebElement editSubmitButton;
+    @FindBy(xpath = "(//input[@id='phoneNumber'])[2]")
+    public WebElement editPhoneNumberButton;
+    @FindBy(xpath = "(//*[@id='password'])[2]")
+    public WebElement editPassword;
+    @FindBy(xpath = "(//*[@name='gender'])[3]")
+    public  WebElement editGenderFemale;
+    @FindBy(xpath = "(//button[@type='button'])[6]")
+    public WebElement editdelete;
 
 
 

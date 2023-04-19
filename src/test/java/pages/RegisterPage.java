@@ -19,21 +19,28 @@ public class RegisterPage {
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]") public WebElement phonenumberfeedback;
     @FindBy(xpath = "(//*[@name='gender'])[1]") public WebElement genderfemale;
     @FindBy(xpath = "(//*[@name='gender'])[2]") public WebElement gendermale;
+
     @FindBy(xpath = "//*[@type='date']") public WebElement dateofbhirt;
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]") public WebElement dateofbhirtfeedback;
     @FindBy(xpath = "//*[@placeholder='ssn']") public WebElement ssn;
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[6]") public WebElement ssnfeedback;
     @FindBy(xpath = "//*[@placeholder='username']") public WebElement username;
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[7]") public WebElement usernamefeedback;
-    @FindBy(xpath = "//*[@placeholder='Password']") public WebElement password;
+    @FindBy(xpath = "//*[@id='password']") public WebElement password;
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[8]") public WebElement passwordfeedback;
     //@FindBy(xpath = "//button[text()='Register']") public WebElement registerbutton;
+    @FindBy(xpath = "//button[@class='fw-semibold btn btn-primary']")
+    public WebElement registerSubmitButton;
+
+////div[@class='Toastify__toast-body']/div[1]
+     @FindBy(xpath = "//div[@class='Toastify__toast Toastify__toast-theme--colored Toastify__toast--success Toastify__toast--close-on-click']")
+     public WebElement succesfullyRegistered;
+     @FindBy(xpath = "//div[@class='Toastify__toast Toastify__toast-theme--colored Toastify__toast--error Toastify__toast--close-on-click']")
+     public WebElement pleaseentervalidssn;
+     @FindBy(xpath = "//div[@class='Toastify__toast Toastify__toast-theme--colored Toastify__toast--error Toastify__toast--close-on-click']")
+     public WebElement pleaseentervalidphone;
 
 
-    @FindBy(xpath = "//button[@class='fw-semibold btn btn-primary']") public WebElement registerSubmitButton;
-
-
-    @FindBy(xpath = "//div[@class='Toastify__toast-body']/div[1]") public WebElement popUpmesaji;
     ////div[@class='Toastify__toast-body']/div[1]
 //    @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-center']") public WebElement popUpmesaji;
 
