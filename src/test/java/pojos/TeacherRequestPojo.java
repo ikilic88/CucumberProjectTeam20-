@@ -1,52 +1,56 @@
 package pojos;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import java.util.List;
 
-
-@JsonIgnoreProperties(ignoreUnknown = true)
-
-public class StudentSavePojo {
-
-    private Integer advisorTeacherId;
+public class TeacherRequestPojo {
+    /*
+    {
+  "birthDay": "<string>",
+  "birthPlace": "<string>",
+  "email": "<string>",
+  "gender": "<string>",
+  "isAdvisorTeacher": "<boolean>",
+  "lessonsIdList": [
+    "<long>",
+    "<long>"
+  ],
+  "name": "<string>",
+  "password": "<string>",
+  "phoneNumber": "<string>",
+  "ssn": "<string>",
+  "surname": "<string>",
+  "username": "<string>"
+}
+     */
     private String birthDay;
     private String birthPlace;
     private String email;
-    private String fatherName;
     private String gender;
-    private String motherName;
+    private boolean isAdvisorTeacher;
+    private List<Integer> lessonsIdList;
     private String name;
     private String password;
     private String phoneNumber;
     private String ssn;
     private String surname;
     private String username;
-    public StudentSavePojo() {
+
+    public TeacherRequestPojo() {
     }
 
-
-    public StudentSavePojo(Integer advisorTeacherId, String birthDay, String birthPlace, String email, String fatherName, String gender, String motherName, String name, String password, String phoneNumber, String ssn, String surname, String username) {
-        this.advisorTeacherId = advisorTeacherId;
+    public TeacherRequestPojo(String birthDay, String birthPlace, String email, String gender, boolean isAdvisorTeacher, List<Integer> lessonsIdList, String name, String password, String phoneNumber, String ssn, String surname, String username) {
         this.birthDay = birthDay;
         this.birthPlace = birthPlace;
         this.email = email;
-        this.fatherName = fatherName;
         this.gender = gender;
-        this.motherName = motherName;
+        this.isAdvisorTeacher = isAdvisorTeacher;
+        this.lessonsIdList = lessonsIdList;
         this.name = name;
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.ssn = ssn;
         this.surname = surname;
         this.username = username;
-
-    }
-
-    public Integer getAdvisorTeacherId() {
-        return advisorTeacherId;
-    }
-
-    public void setAdvisorTeacherId(Integer advisorTeacherId) {
-        this.advisorTeacherId = advisorTeacherId;
     }
 
     public String getBirthDay() {
@@ -73,14 +77,6 @@ public class StudentSavePojo {
         this.email = email;
     }
 
-    public String getFatherName() {
-        return fatherName;
-    }
-
-    public void setFatherName(String fatherName) {
-        this.fatherName = fatherName;
-    }
-
     public String getGender() {
         return gender;
     }
@@ -89,12 +85,20 @@ public class StudentSavePojo {
         this.gender = gender;
     }
 
-    public String getMotherName() {
-        return motherName;
+    public boolean isAdvisorTeacher() {
+        return isAdvisorTeacher;
     }
 
-    public void setMotherName(String motherName) {
-        this.motherName = motherName;
+    public void setAdvisorTeacher(boolean advisorTeacher) {
+        isAdvisorTeacher = advisorTeacher;
+    }
+
+    public List<Integer> getLessonsIdList() {
+        return lessonsIdList;
+    }
+
+    public void setLessonsIdList(List<Integer> lessonsIdList) {
+        this.lessonsIdList = lessonsIdList;
     }
 
     public String getName() {
@@ -147,14 +151,13 @@ public class StudentSavePojo {
 
     @Override
     public String toString() {
-        return "StudentSavePojo{" +
-                "advisorTeacherId=" + advisorTeacherId +
-                ", birthDay='" + birthDay + '\'' +
+        return "TeacherRequestPojo{" +
+                "birthDay='" + birthDay + '\'' +
                 ", birthPlace='" + birthPlace + '\'' +
                 ", email='" + email + '\'' +
-                ", fatherName='" + fatherName + '\'' +
                 ", gender='" + gender + '\'' +
-                ", motherName='" + motherName + '\'' +
+                ", isAdvisorTeacher=" + isAdvisorTeacher +
+                ", lessonsIdList=" + lessonsIdList +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
@@ -163,5 +166,4 @@ public class StudentSavePojo {
                 ", username='" + username + '\'' +
                 '}';
     }
-
 }

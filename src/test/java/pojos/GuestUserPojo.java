@@ -1,19 +1,34 @@
 package pojos;
 
-public class TeacherObjectPojo {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class GuestUserPojo {
     private String birthDay;
     private String birthPlace;
-    private String email;
     private String gender;
-    private boolean isAdvisorTeacher;
-    private long lessonsIdList;
     private String name;
     private String password;
     private String phoneNumber;
     private String ssn;
     private String surname;
     private String username;
+
+    public GuestUserPojo() {
+    }
+
+    public GuestUserPojo(String birthDay, String birthPlace, String gender, String name, String password, String phoneNumber, String ssn, String surname, String username) {
+        this.birthDay = birthDay;
+        this.birthPlace = birthPlace;
+        this.gender = gender;
+        this.name = name;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.ssn = ssn;
+        this.surname = surname;
+        this.username = username;
+    }
+
 
     public String getBirthDay() {
         return birthDay;
@@ -31,36 +46,12 @@ public class TeacherObjectPojo {
         this.birthPlace = birthPlace;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getGender() {
         return gender;
     }
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public boolean isAdvisorTeacher() {
-        return isAdvisorTeacher;
-    }
-
-    public void setAdvisorTeacher(boolean advisorTeacher) {
-        isAdvisorTeacher = advisorTeacher;
-    }
-
-    public long getLessonsIdList() {
-        return lessonsIdList;
-    }
-
-    public void setLessonsIdList(long lessonsIdList) {
-        this.lessonsIdList = lessonsIdList;
     }
 
     public String getName() {
@@ -111,33 +102,12 @@ public class TeacherObjectPojo {
         this.username = username;
     }
 
-    public TeacherObjectPojo() {
-    }
-
-    public TeacherObjectPojo(String birthDay, String birthPlace, String email, String gender, boolean isAdvisorTeacher, long lessonsIdList, String name, String password, String phoneNumber, String ssn, String surname, String username) {
-        this.birthDay = birthDay;
-        this.birthPlace = birthPlace;
-        this.email = email;
-        this.gender = gender;
-        this.isAdvisorTeacher = isAdvisorTeacher;
-        this.lessonsIdList = lessonsIdList;
-        this.name = name;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
-        this.ssn = ssn;
-        this.surname = surname;
-        this.username = username;
-    }
-
     @Override
     public String toString() {
-        return "TeacherObjectPojo{" +
+        return "GuestUserPojo{" +
                 "birthDay='" + birthDay + '\'' +
                 ", birthPlace='" + birthPlace + '\'' +
-                ", email='" + email + '\'' +
                 ", gender='" + gender + '\'' +
-                ", isAdvisorTeacher=" + isAdvisorTeacher +
-                ", lessonsIdList=" + lessonsIdList +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
