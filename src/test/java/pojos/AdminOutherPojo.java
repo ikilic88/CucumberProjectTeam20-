@@ -1,31 +1,24 @@
 package pojos;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+public class AdminOutherPojo {
+    public AdminObjectPojo object;
+    public String message;
+    public String httpStatus;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class MessagePostPojo {
-
-
-    private MessageObjectPojo object;
-    private String message;
-    private String httpStatus;
-
-    public MessagePostPojo() {
+    public AdminOutherPojo() {
     }
 
-    public MessagePostPojo(MessageObjectPojo object, String message, String httpStatus) {
+    public void AAdminOutherPojo(AdminObjectPojo object, String message, String httpStatus) {
         this.object = object;
         this.message = message;
         this.httpStatus = httpStatus;
     }
 
-
-
-    public MessageObjectPojo getObject() {
+    public AdminObjectPojo getObject() {
         return object;
     }
 
-    public void setObject(MessageObjectPojo object) {
+    public void setObject(AdminObjectPojo object) {
         this.object = object;
     }
 
@@ -47,10 +40,11 @@ public class MessagePostPojo {
 
     @Override
     public String toString() {
-        return "MessagePostPojo{" +
+        return "AAdminOutherPojo{" +
                 "object=" + object +
                 ", message='" + message + '\'' +
                 ", httpStatus='" + httpStatus + '\'' +
                 '}';
     }
 }
+
